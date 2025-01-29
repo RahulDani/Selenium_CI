@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/RahulDani/Selenium_CI.git'  // Replace with your Git repository URL
+                  git branch: 'main', url: 'https://github.com/RahulDani/Selenium_CI.git'  // Replace with your Git repository URL
             }
         }
 
