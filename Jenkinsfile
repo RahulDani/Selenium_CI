@@ -4,19 +4,25 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                  git branch: 'main', url: 'https://github.com/RahulDani/Selenium_CI.git'  // Replace with your Git repository URL
+                git branch: 'main', url: 'https://github.com/RahulDani/Selenium_CI.git'  // Your Git repository URL
             }
         }
 
         stage('Build Project') {
             steps {
-                sh 'mvn clean package'  // Compiles and creates a JAR file in the target folder
+                script {
+                    // Assuming you're using Maven or Gradle to build the project
+                    bat 'mvn clean install'  // Adjust to your build tool and command
+                }
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'java -jar target/Selenium_first-1.0-SNAPSHOT.jar'  // Replace with your JAR file name
+                script {
+                    // Running Selenium tests
+                    bat 'mvn test'  // Adjust as needed for your test command
+                }
             }
         }
     }
