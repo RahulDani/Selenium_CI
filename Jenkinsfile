@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo-url.git'  // Replace with your Git repository URL
+                git 'https://github.com/RahulDani/Selenium_CI.git'  // Replace with your Git repository URL
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'java -jar target/your-selenium-test.jar'  // Replace with your JAR file name
+                sh 'java -jar target/Selenium_first-1.0-SNAPSHOT.jar'  // Replace with your JAR file name
             }
         }
     }
